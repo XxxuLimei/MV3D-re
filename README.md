@@ -9,6 +9,9 @@
 - `make`  
 - `sudo make install`  
 详细终端信息见cnpy.log文件  
+- Cmake流程：
+- Cmake CmakeLists.txt
+- make  
 ---------------  
 卡在了make MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter上：  
 bug文件见make.log  
