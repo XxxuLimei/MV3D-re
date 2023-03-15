@@ -1,0 +1,90 @@
+(base) xilm@xilm-MS-7D17:~/app_install/build$ cmake ../cnpy/
+CMake Warning:
+  Ignoring extra path from command line:
+
+   "../cnpy/"
+
+
+CMake Error: The source directory "/home/xilm/app_install/cnpy" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+(base) xilm@xilm-MS-7D17:~/app_install/build$ cmake ../cnpy/cnpy-master/
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/xilm/app_install/build
+(base) xilm@xilm-MS-7D17:~/app_install/build$ make
+[ 16%] Building CXX object CMakeFiles/cnpy.dir/cnpy.cpp.o
+[ 33%] Linking CXX shared library libcnpy.so
+[ 33%] Built target cnpy
+[ 50%] Building CXX object CMakeFiles/cnpy-static.dir/cnpy.cpp.o
+[ 66%] Linking CXX static library libcnpy.a
+[ 66%] Built target cnpy-static
+[ 83%] Building CXX object CMakeFiles/example1.dir/example1.cpp.o
+[100%] Linking CXX executable example1
+[100%] Built target example1
+(base) xilm@xilm-MS-7D17:~/app_install/build$ make install
+[ 33%] Built target cnpy
+[ 66%] Built target cnpy-static
+[100%] Built target example1
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/lib/libcnpy.so
+CMake Error at cmake_install.cmake:52 (file):
+  file INSTALL cannot copy file "/home/xilm/app_install/build/libcnpy.so" to
+  "/usr/local/lib/libcnpy.so": Permission denied.
+
+
+make: *** [Makefile:100: install] Error 1
+(base) xilm@xilm-MS-7D17:~/app_install/build$ make install
+[ 33%] Built target cnpy
+[ 66%] Built target cnpy-static
+[100%] Built target example1
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/lib/libcnpy.so
+CMake Error at cmake_install.cmake:52 (file):
+  file INSTALL cannot copy file "/home/xilm/app_install/build/libcnpy.so" to
+  "/usr/local/lib/libcnpy.so": Permission denied.
+
+
+make: *** [Makefile:100: install] Error 1
+(base) xilm@xilm-MS-7D17:~/app_install/build$ sudo chmod 777 libcnpy.so 
+[sudo] password for xilm: 
+(base) xilm@xilm-MS-7D17:~/app_install/build$ make install
+[ 33%] Built target cnpy
+[ 66%] Built target cnpy-static
+[100%] Built target example1
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/lib/libcnpy.so
+CMake Error at cmake_install.cmake:52 (file):
+  file INSTALL cannot copy file "/home/xilm/app_install/build/libcnpy.so" to
+  "/usr/local/lib/libcnpy.so": Permission denied.
+
+
+make: *** [Makefile:100: install] Error 1
+(base) xilm@xilm-MS-7D17:~/app_install/build$ sudo make install
+[ 33%] Built target cnpy
+[ 66%] Built target cnpy-static
+[100%] Built target example1
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/lib/libcnpy.so
+-- Installing: /usr/local/lib/libcnpy.a
+-- Installing: /usr/local/include/cnpy.h
+-- Installing: /usr/local/bin/mat2npz
+-- Installing: /usr/local/bin/npy2mat
+-- Installing: /usr/local/bin/npz2mat
+(base) xilm@xilm-MS-7D17:~/app_install/build$ 
