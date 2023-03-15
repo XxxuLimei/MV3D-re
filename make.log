@@ -1,0 +1,26 @@
+(base) xilm@xilm-MS-7D17:~/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/build$ make
+[ 50%] Building CXX object CMakeFiles/npy_converter.dir/npy_converter.cpp.o
+/home/xilm/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/npy_converter.cpp: In function ‘void npy_saver_3d(float*, int)’:
+/home/xilm/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/npy_converter.cpp:68:58: error: no matching function for call to ‘npy_save(std::string&, float*&, long unsigned int [3], int, const char [2])’
+   68 |     cnpy::npy_save(npy_filename, data_cube, shape, 3, "w");  // The 4th argument is the number of dimensions of the npy array, i.e. 3
+      |                                                          ^
+In file included from /home/xilm/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/npy_converter.cpp:16:
+/usr/local/include/cnpy.h:88:31: note: candidate: ‘template<class T> void cnpy::npy_save(std::string, const T*, std::vector<long unsigned int, std::allocator<long unsigned int> >, std::string)’
+   88 |     template<typename T> void npy_save(std::string fname, const T* data, const std::vector<size_t> shape, std::string mode = "w") {
+      |                               ^~~~~~~~
+/usr/local/include/cnpy.h:88:31: note:   template argument deduction/substitution failed:
+/home/xilm/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/npy_converter.cpp:68:58: note:   candidate expects 4 arguments, 5 provided
+   68 |     cnpy::npy_save(npy_filename, data_cube, shape, 3, "w");  // The 4th argument is the number of dimensions of the npy array, i.e. 3
+      |                                                          ^
+In file included from /home/xilm/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/npy_converter.cpp:16:
+/usr/local/include/cnpy.h:223:31: note: candidate: ‘template<class T> void cnpy::npy_save(std::string, std::vector<T>, std::string)’
+  223 |     template<typename T> void npy_save(std::string fname, const std::vector<T> data, std::string mode = "w") {
+      |                               ^~~~~~~~
+/usr/local/include/cnpy.h:223:31: note:   template argument deduction/substitution failed:
+/home/xilm/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/npy_converter.cpp:68:58: note:   mismatched types ‘std::vector<T>’ and ‘float*’
+   68 |     cnpy::npy_save(npy_filename, data_cube, shape, 3, "w");  // The 4th argument is the number of dimensions of the npy array, i.e. 3
+      |                                                          ^
+make[2]: *** [CMakeFiles/npy_converter.dir/build.make:76: CMakeFiles/npy_converter.dir/npy_converter.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/npy_converter.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+(base) xilm@xilm-MS-7D17:~/fuxian/MV3D/MV3D-master/src/lidar_data_preprocess/npyConverter/build$ 
